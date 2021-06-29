@@ -35,5 +35,12 @@ public class DrvierTrees {
         treeTraversals.inorder(root);
         System.out.println("");
         System.out.println("===========");
+
+        System.out.println("==== Sorted Array to BST ======");
+        int[] array = new int[]{-10,-3,0,5,9};
+        TreeNode node = treeProblems.sortedArrayToBST(array);
+        System.out.println("Output " + node);
+        System.out.println("");
+        System.out.println("===========");
     }
 }

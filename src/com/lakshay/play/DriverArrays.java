@@ -8,18 +8,18 @@ import java.util.stream.Collectors;
 public class DriverArrays {
     public static void main(String[] args){
         System.out.println("Program started");
-//        int[] input = new int[]{1, 2, 2, 4, 5, 5,7};
-//        ArrayProblems driver = new ArrayProblems();
-//        int[] output = driver.rotateArray(input, input.length, 15);
-//        for(int i : output){
-//            System.out.print(i);
-//        }
-//
-//        int[] numbers = {1,4,5,2,34,66,5,4,33,45,6,8,56,76,78,98,34,37,12,12,23,43,54,56};
-//        List<Integer> list = Arrays.stream(numbers).boxed().collect(Collectors.toList());
-//        TreeSet<Integer> listSet = new TreeSet<>(list);
-//        System.out.println(listSet.first());
-//        System.out.println(listSet.last());
+        int[] input = new int[]{1, 2, 2, 4, 5, 5,7};
+        ArrayProblems driver = new ArrayProblems();
+        int[] output = driver.rotateArray(input, input.length, 15);
+        for(int i : output){
+            System.out.print(i);
+        }
+
+        int[] numbers = {1,4,5,2,34,66,5,4,33,45,6,8,56,76,78,98,34,37,12,12,23,43,54,56};
+        List<Integer> list = Arrays.stream(numbers).boxed().collect(Collectors.toList());
+        TreeSet<Integer> listSet = new TreeSet<>(list);
+        System.out.println(listSet.first());
+        System.out.println(listSet.last());
 
         Map<String, Integer> stockPrice = new HashMap<>();
 
@@ -49,6 +49,14 @@ public class DriverArrays {
                 iterator.remove();
         }
         System.out.println(stockPrice);
+
+
+        System.out.println("================================");
+        int[] inputArray = new int[]{1,3};
+        int output1 = driver.searchInsert(inputArray, 2);
+        System.out.println("SearchInsert output " + output1);
+
+        System.out.println("================================");
     }
 
     public class Employee {

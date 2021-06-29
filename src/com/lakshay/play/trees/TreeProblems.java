@@ -91,4 +91,19 @@ public class TreeProblems {
         }
         return max;
     }
+
+    public TreeNode sortedArrayToBST(int[] nums) {
+        if(nums.length == 0) return null;
+        if(nums.length == 1) {
+            TreeNode leafNode = new TreeNode(nums[0]);
+            return leafNode;
+        }
+        int low = 0;
+        int high = nums.length-1;
+        int mid = low + high/2;
+        TreeNode node = new TreeNode(nums[mid]);
+        node.left = sortedArrayToBST(Arrays.copyOfRange(nums, low, mid));
+        node.right = sortedArrayToBST(Arrays.copyOfRange(nums, mid, high));
+        return node;
+    }
 }
