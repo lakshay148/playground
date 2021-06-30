@@ -48,4 +48,55 @@ public class StringProblems {
             System.out.print(entry.getKey()+entry.getValue());
         }
     }
+
+    public String addBinary(String a, String b) {
+        if(b.length() > a.length()){
+            String temp = a;
+            a = b;
+            b = temp;
+        }
+        int carry = 0;
+        String output = "";
+        int i = a.length()-1;
+        int j = b.length()-1;
+        for (; i>=0 && j>=0;i--,j--){
+            if(Integer.parseInt(a.charAt(i)+"") == 1 && Integer.parseInt(b.charAt(j)+"") == 1){
+                if(carry == 0) output = '0' + output;
+                else output = '1'+ output;
+                carry = 1;
+            } else if( Integer.parseInt(a.charAt(i)+"") == 1 || Integer.parseInt(b.charAt(j)+"") == 1){
+                if(carry == 0){
+                    output = '1' + output;
+                } else {
+                    carry = 1;
+                    output = '0' + output;
+                }
+            } else {
+                if(carry == 1) output = '1'+output;
+                else output = '0'+output;
+                carry = 0;
+            }
+        }
+        while(i>=0){
+            if(Integer.parseInt(a.charAt(i)+"") == 1){
+                if(carry == 1){
+                    output = '0'+output;
+                } else {
+                    output = '1'+output;
+                    carry = 0;
+                }
+            } else {
+                if(carry == 1){
+                    output = '1'+output;
+                    carry = 0;
+                } else {
+                    output = '0'+output;
+                }
+            }
+            i--;
+        }
+        if(carry == 1)
+            output = '1'+ output;
+        return output;
+    }
 }
